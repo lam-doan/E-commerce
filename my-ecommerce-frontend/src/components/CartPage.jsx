@@ -17,6 +17,8 @@ const CartPage = () => {
             })
     }, []);
 
+    const subtotal = items.reduce((sum, item) => sum + item.product_id.price*item.quantity, 0);
+
     if (!dataisLoaded) {
         return (
             <div className='loading'>
@@ -27,23 +29,41 @@ const CartPage = () => {
     }
 
     return (
-        <div className='cart-container'>
-            <h2 className='cart-title'>ALL ITEMS</h2>
-            {items.length === 0 ? (
-                <p className="no-items">No items in the cart.</p>
-            ) : (
-                <div className='item-list'>
-                    {items.map(item => (
-                        <div className="item-card" key={item._id}>
-                            <div className='item-info'>
-                                <p className="item-title">{item.product_id.name}</p>
-                                <p className="item-price">{item.product_id.price}</p>
-                                <p className="item-price">{item.quantity}</p>
+        <div className='cart-page'>
+            <div className='cart-items'>
+                <h2 className='cart-title'>Shopping Cart</h2>
+                {items.length === 0 ? (
+                    <p className="no-items">Your cart is empty</p>
+                ) : (
+                    items.map(item => (
+                        <div className='item-list'>
+                            <div className="item-card" key={item._id}>
+                                <div className='item-info'>
+                                    <h3>{item.product_id.name}</h3>
+                                    <p className="price">{item.product_id.price}</p>
+                                    <p className="quantity">{item.quantity}</p>
+                                </div>
+                                <div className='item-actions'>
+                                    <button className='remove-btn'>Remove</button>
+                                </div>
                             </div>
                         </div>
-                    ))}
+                    ))
+                )}
+            </div>
+
+            <div className='order-summary'>
+                <h3>Order Summary</h3>
+                <div className='summary-row'>
+                    <span>Subtotal</span>
+                    <span>${subtotal}</span>
                 </div>
-            )}
+                <div className='summary-row total'>
+                    <span>Total</span>
+                    <span>${subtotal}</span>
+                </div>
+                <button className='checkout-btn'>Proceed to checkout</button>
+            </div>
         </div>
     );
 };
