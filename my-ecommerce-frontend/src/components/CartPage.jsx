@@ -30,8 +30,8 @@ const CartPage = () => {
 
     return (
         <div className='cart-page'>
+            <h2 className='cart-title'>Shopping Cart</h2>
             <div className='cart-items'>
-                <h2 className='cart-title'>Shopping Cart</h2>
                 {items.length === 0 ? (
                     <p className="no-items">Your cart is empty</p>
                 ) : (
@@ -40,12 +40,10 @@ const CartPage = () => {
                             <div className="item-card" key={item._id}>
                                 <div className='item-info'>
                                     <h3>{item.product_id.name}</h3>
-                                    <p className="price">{item.product_id.price}</p>
+                                    <p className="price">${item.product_id.price.toFixed(2)}</p>
                                     <p className="quantity">{item.quantity}</p>
                                 </div>
-                                <div className='item-actions'>
-                                    <button className='remove-btn'>Remove</button>
-                                </div>
+                                <button className="remove-btn">Remove</button>
                             </div>
                         </div>
                     ))
@@ -56,11 +54,11 @@ const CartPage = () => {
                 <h3>Order Summary</h3>
                 <div className='summary-row'>
                     <span>Subtotal</span>
-                    <span>${subtotal}</span>
+                    <span>${subtotal.toFixed(2)}</span>
                 </div>
                 <div className='summary-row total'>
                     <span>Total</span>
-                    <span>${subtotal}</span>
+                    <span>${subtotal.toFixed(2)}</span>
                 </div>
                 <button className='checkout-btn'>Proceed to checkout</button>
             </div>

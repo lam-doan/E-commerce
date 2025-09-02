@@ -5,7 +5,8 @@ const productSchema = new mongoose.Schema({
     description : {type: String},
     features: {type: [String]},
     warranty: {type: String},
-    price: { type: Number, required: true}
+    price: { type: Number, required: true},
+    image: String
 }, {
     timestamps: true
 });

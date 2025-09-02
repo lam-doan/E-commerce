@@ -26,7 +26,7 @@ export const addItemToCart = async (req, res) => {
     );
     
     console.log('Incoming cart add:', { user_id, product_id, quantity });
-    const updatedCart = await CartItem.find({cart_id: cart._id}).populate('product_id', 'name price');
+    const updatedCart = await CartItem.find({cart_id: cart._id}).populate('product_id', 'name price image');
     res.status(200).json({ message: 'Item added', cart: updatedCart});
   } catch (error) {
     console.error('Error adding item to cart:', error);
@@ -68,7 +68,7 @@ export const getCart = async (req, res) => {
     }
 
     const cartItems = await CartItem.find({cart_id: cart._id})
-      .populate('product_id', 'name price');
+      .populate('product_id', 'name price image');
 
     res.json({ items: cartItems });
   } catch (err) {
