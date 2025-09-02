@@ -7,6 +7,7 @@ import orderRoutes from './routes/orderRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import productRoutes from './routes/productRoutes.js';
+import path from 'path';
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use('/order', orderRoutes);
 app.use('/cart', cartRoutes);
 app.use('/auth', authRoutes);
 app.use('/products', productRoutes);
+app.use('/images', Express.static(path.join(__dirname, 'src/image')));
 
 app.get('/', (req, res) => {
   res.send('🛒 eCommerce API is alive');

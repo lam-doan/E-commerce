@@ -19,24 +19,31 @@
   margin-bottom: 1rem;
 }
 
-.item-list {
+.cart-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* pushes remove button to far right */
   gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid #eee;
 }
 
-.item-list:last-child {
+.cart-item:last-child {
   border-bottom: none;
 }
 
-.item-info {
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cart-item-details {
   flex: 1;
 }
 
-.item-info h3 {
+.cart-item-details h3 {
   font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
