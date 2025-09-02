@@ -1,0 +1,101 @@
+/*Base layout*/
+.product-catalog {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.catalog-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/*Loading & Empty States*/
+.loading,
+.no-products {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+/*Product template*/
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/*Product card*/
+.product-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/*Product info */
+.product-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: #222;
+}
+
+.product-description {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 0 1rem;
+}
+
+/*Feature and warranty */
+.product-features {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.product-features li {
+  margin-bottom: 0.35rem;
+}
+
+.product-warranty {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0 0 1rem;
+}
+
+/*Add-to-cart button*/
+.add-to-cart-btn {
+  margin-top: auto;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  background-color: #5E936C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #386641;
+  transform: translateY(-1px);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
