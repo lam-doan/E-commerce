@@ -7,6 +7,12 @@ import orderRoutes from './routes/orderRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import productRoutes from './routes/productRoutes.js';
+import cors from 'cors';
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
 
 dotenv.config();
 
