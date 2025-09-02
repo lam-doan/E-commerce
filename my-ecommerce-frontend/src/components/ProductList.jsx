@@ -8,7 +8,7 @@ const ProductList = () => {
 
     useEffect(() => {
         console.log('useEffect triggered');
-        fetch("https://e-commerce-gl2f.onrender.com/products")
+        fetch("https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/products")
             .then((res) => res.json())
             .then((json) => {
                 setProducts(json);

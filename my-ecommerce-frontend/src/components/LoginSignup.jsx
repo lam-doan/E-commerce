@@ -12,7 +12,7 @@ const AuthForm = () => {
         const endpoint = mode === 'login' ? 'login' : 'register';
 
         try {
-            const res = await fetch(`https://e-commerce-gl2f.onrender.com/auth/${endpoint}`,
+            const res = await fetch(`https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/auth/${endpoint}`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

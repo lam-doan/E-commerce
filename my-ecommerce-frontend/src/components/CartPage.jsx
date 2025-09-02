@@ -6,7 +6,7 @@ const CartPage = () => {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        fetch("https://e-commerce-gl2f.onrender.com/cart", {
+        fetch("https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/cart", {
             headers: { Authorization: `Bearer ${token}`}
         })
             .then(res => res.json())
