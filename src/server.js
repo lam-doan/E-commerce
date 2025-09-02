@@ -13,7 +13,7 @@ dotenv.config();
 const app = Express();
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://studious-eureka-7v9wrw6v7vv9cwpx9-3000.app.github.dev',
   credentials: true
 }));
 
