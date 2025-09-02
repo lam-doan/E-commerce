@@ -1,22 +1,22 @@
-// server.js
 import Express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { connectDB } from './db/index.js';
 
 import orderRoutes from './routes/orderRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import productRoutes from './routes/productRoutes.js';
-import cors from 'cors';
+
+dotenv.config();
+
+const app = Express();
 
 app.use(cors({
   origin: 'http://localhost:3000',
   credentials: true
 }));
 
-dotenv.config();
-
-const app = Express();
 app.use(Express.json());
 
 connectDB(); // 🔗 Connect to MongoDB
