@@ -6,7 +6,7 @@ const ProductList = () => {
   const [dataIsLoaded, setDataIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/products")
+    fetch("https://orange-parakeet-5gq545jgg69xfvj97-5000.app.github.dev/products")
       .then((res) => res.json())
       .then((json) => {
         setProducts(json);
@@ -30,7 +30,7 @@ const ProductList = () => {
     }
 
     try {
-      const res = await fetch("https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/cart/add", {
+      const res = await fetch("https://orange-parakeet-5gq545jgg69xfvj97-5000.app.github.dev/cart/add", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const ProductList = () => {
               {/* Product image from backend */}
               {product.image && (
                 <img
-                  src={`https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev${product.image}`}
+                  src={`https://orange-parakeet-5gq545jgg69xfvj97-5000.app.github.dev${product.image}`}
                   alt={product.name}
                   className="product-image"
                 />

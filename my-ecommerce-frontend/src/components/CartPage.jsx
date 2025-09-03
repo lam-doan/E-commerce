@@ -7,7 +7,7 @@ const CartPage = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch("https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/cart", {
+    fetch("https://orange-parakeet-5gq545jgg69xfvj97-5000.app.github.dev/cart", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -20,7 +20,7 @@ const CartPage = () => {
   const handleRemove = async (productId) => {
     const token = localStorage.getItem('token');
     try {
-      const res = await fetch(`https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/cart/${productId}`, {
+      const res = await fetch(`https://orange-parakeet-5gq545jgg69xfvj97-5000.app.github.dev/cart/${productId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -53,7 +53,7 @@ const CartPage = () => {
           items.map(item => (
             <div className="cart-item" key={item._id}>
               <img
-                src={`https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev${item.product_id.image}`}
+                src={`https://orange-parakeet-5gq545jgg69xfvj97-5000.app.github.dev${item.product_id.image}`}
                 alt={item.product_id.name}
                 className="cart-item-image"
               />

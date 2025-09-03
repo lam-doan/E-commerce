@@ -12,7 +12,7 @@ const AuthForm = () => {
         const endpoint = mode === 'login' ? 'login' : 'register';
 
         try {
-            const res = await fetch(`https://studious-eureka-7v9wrw6v7vv9cwpx9-5000.app.github.dev/auth/${endpoint}`,
+            const res = await fetch(`https://orange-parakeet-5gq545jgg69xfvj97-5000.app.github.dev/auth/${endpoint}`,
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
