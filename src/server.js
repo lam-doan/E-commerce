@@ -8,6 +8,10 @@ import cartRoutes from './routes/cartRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -20,13 +24,13 @@ app.use(cors({
 
 app.use(Express.json());
 
+app.use('/images', Express.static(path.join(__dirname, 'src/image')));
 connectDB(); // 🔗 Connect to MongoDB
 
 app.use('/order', orderRoutes);
 app.use('/cart', cartRoutes);
 app.use('/auth', authRoutes);
 app.use('/products', productRoutes);
-app.use('/images', Express.static(path.join(__dirname, 'src/image')));
 
 app.get('/', (req, res) => {
   res.send('🛒 eCommerce API is alive');
