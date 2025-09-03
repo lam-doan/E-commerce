@@ -24,7 +24,8 @@ app.use(cors({
 
 app.use(Express.json());
 
-app.use('/image', Express.static(path.join(__dirname, 'src/image')));
+app.use('/image', Express.static(path.join(__dirname, 'image')));
+
 connectDB(); // 🔗 Connect to MongoDB
 
 app.use('/order', orderRoutes);
