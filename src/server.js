@@ -18,13 +18,13 @@ dotenv.config();
 const app = Express();
 
 app.use(cors({
-  origin: 'https://studious-eureka-7v9wrw6v7vv9cwpx9-3000.app.github.dev',
+  origin: 'https://orange-parakeet-5gq545jgg69xfvj97-3000.app.github.dev',
   credentials: true
 }));
 
 app.use(Express.json());
 
-app.use('/images', Express.static(path.join(__dirname, 'src/image')));
+app.use('/image', Express.static(path.join(__dirname, 'src/image')));
 connectDB(); // 🔗 Connect to MongoDB
 
 app.use('/order', orderRoutes);
